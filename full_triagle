@@ -1,0 +1,15 @@
+def get_Pascal_triangle(n: int):
+    triangle = []
+
+    for i in range(n):
+        row = [1]  # Начинаем каждый ряд с 1
+        if i > 0:
+            for j in range(1, i):
+                row.append(triangle[i-1][j-1] + triangle[i-1][j])
+            row.append(1)  # Завершаем каждый ряд с 1
+        triangle.append(row)
+        print(' '.join(map(str, row)))  # Выводим текущий ряд в строковом формате
+
+
+row_Pascal_triangle = int(input())
+get_Pascal_triangle(row_Pascal_triangle)
